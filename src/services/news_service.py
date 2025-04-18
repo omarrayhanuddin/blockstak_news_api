@@ -35,25 +35,6 @@ class NewsService:
             logger.error(f"Unexpected error fetching news: {str(e)}")
             raise HTTPException(status_code=500, detail="Internal server error")
 
-        # except httpx.HTTPStatusError as e:
-        #     logger.error(f"HTTP error fetching news: {str(e)}")
-        #     raise HTTPException(
-        #         status_code=e.response.status_code,
-        #         detail=f"Failed to fetch news: {str(e)}"
-        #     )
-        # except httpx.RequestError as e:
-        #     logger.error(f"Network error fetching news: {str(e)}")
-        #     raise HTTPException(
-        #         status_code=503,
-        #         detail="Service unavailable due to network issues"
-        #     )
-        # except Exception as e:
-        #     logger.error(f"Unexpected error fetching news: {str(e)}")
-        #     raise HTTPException(
-        #         status_code=500,
-        #         detail="Internal server error"
-        #     )
-
     async def fetch_and_save_latest(
         self, db: Session, country_code: str = "us"
     ) -> List[News]:
@@ -89,18 +70,6 @@ class NewsService:
                         logger.warning(f"Invalid article data: {str(e)}")
                         continue
                 return news_items
-        # except httpx.HTTPStatusError as e:
-        #     logger.error(f"HTTP error fetching headlines: {str(e)}")
-        #     raise HTTPException(
-        #         status_code=e.response.status_code,
-        #         detail=f"Failed to fetch headlines: {str(e)}"
-        #     )
-        # except httpx.RequestError as e:
-        #     logger.error(f"Network error fetching headlines: {str(e)}")
-        #     raise HTTPException(
-        #         status_code=503,
-        #         detail="Service unavailable due to network issues"
-        #     )
         except Exception as e:
             logger.error(f"Unexpected error in fetch_and_save_latest: {str(e)}")
             raise HTTPException(status_code=500, detail="Internal server error")
@@ -115,18 +84,6 @@ class NewsService:
                 )
                 response.raise_for_status()
                 return response.json().get("articles", [])
-        # except httpx.HTTPStatusError as e:
-        #     logger.error(f"HTTP error fetching country headlines: {str(e)}")
-        #     raise HTTPException(
-        #         status_code=e.response.status_code,
-        #         detail=f"Failed to fetch country headlines: {str(e)}"
-        #     )
-        # except httpx.RequestError as e:
-        #     logger.error(f"Network error fetching country headlines: {str(e)}")
-        #     raise HTTPException(
-        #         status_code=503,
-        #         detail="Service unavailable due to network issues"
-        #     )
         except Exception as e:
             logger.error(f"Unexpected error fetching country headlines: {str(e)}")
             raise HTTPException(status_code=500, detail="Internal server error")
@@ -141,18 +98,6 @@ class NewsService:
                 )
                 response.raise_for_status()
                 return response.json().get("articles", [])
-        # except httpx.HTTPStatusError as e:
-        #     logger.error(f"HTTP error fetching source headlines: {str(e)}")
-        #     raise HTTPException(
-        #         status_code=e.response.status_code,
-        #         detail=f"Failed to fetch source headlines: {str(e)}"
-        #     )
-        # except httpx.RequestError as e:
-        #     logger.error(f"Network error fetching source headlines: {str(e)}")
-        #     raise HTTPException(
-        #         status_code=503,
-        #         detail="Service unavailable due to network issues"
-        #     )
         except Exception as e:
             logger.error(f"Unexpected error fetching source headlines: {str(e)}")
             raise HTTPException(status_code=500, detail="Internal server error")
@@ -178,18 +123,6 @@ class NewsService:
                 )
                 response.raise_for_status()
                 return response.json().get("articles", [])
-        # except httpx.HTTPStatusError as e:
-        #     logger.error(f"HTTP error fetching filtered headlines: {str(e)}")
-        #     raise HTTPException(
-        #         status_code=e.response.status_code,
-        #         detail=f"Failed to fetch filtered headlines: {str(e)}"
-        #     )
-        # except httpx.RequestError as e:
-        #     logger.error(f"Network error fetching filtered headlines: {str(e)}")
-        #     raise HTTPException(
-        #         status_code=503,
-        #         detail="Service unavailable due to network issues"
-        #     )
         except Exception as e:
             logger.error(f"Unexpected error fetching filtered headlines: {str(e)}")
             raise HTTPException(status_code=500, detail="Internal server error")
