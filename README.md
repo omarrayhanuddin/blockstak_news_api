@@ -133,7 +133,7 @@ Use the token in the Authorization header for protected endpoints:
 Authorization: Bearer your-jwt-token
 ```
 
-Note: The `client_id` and `client_secret` are configured in the `.env` file and must match the values set in the environment for authentication to succeed. Contact the administrator to obtain the correct credentials.
+Note: The `client_id` and `client_secret` are configured in the `.env` file and must match the values set in the environment for authentication to succeed.
 
 ## API Endpoints
 
