@@ -65,8 +65,9 @@ git clone https://github.com/omarrayhanuddin/blockstak_news_api.git
 cd blockstak_news_api
 ```
 
-2. Create a virtual environment:
-1. Create a virtual environment:
+2. Virtual Environment Setup
+
+Create a virtual environment:
 
    - **Windows**:
 
@@ -80,7 +81,7 @@ cd blockstak_news_api
      python3 -m venv venv
      ```
 
-2. Activate the virtual environment:
+Activate the virtual environment:
 
    - **Windows**:
 
