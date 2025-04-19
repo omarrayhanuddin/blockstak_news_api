@@ -66,10 +66,33 @@ cd blockstak_news_api
 ```
 
 2. Create a virtual environment:
-```bash
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+1. Create a virtual environment:
+
+   - **Windows**:
+
+     ```bash
+     python -m venv venv
+     ```
+
+   - **Linux/macOS**:
+
+     ```bash
+     python3 -m venv venv
+     ```
+
+2. Activate the virtual environment:
+
+   - **Windows**:
+
+     ```bash
+     venv\Scripts\activate
+     ```
+
+   - **Linux/macOS**:
+
+     ```bash
+     source venv/bin/activate
+     ```
 
 3. Install dependencies:
 ```bash
